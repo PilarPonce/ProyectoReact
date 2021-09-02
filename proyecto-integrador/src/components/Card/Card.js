@@ -22,11 +22,11 @@ class Card extends Component{
                 <main>
                     <img src={this.props.dataPelicula.poster_path} alt="" />
                     <h3>{this.props.dataPelicula.title}</h3>
-                    <p className="description">{this.props.dataPelicula.overview}</p>
+                    <p>Vote average: {this.props.dataPelicula.vote_average} </p>
                     <section className="aditional-info">
+                        <p className="description">{this.props.dataPelicula.overview}</p>
                         <p>Release date: {this.props.dataPelicula.release_date}</p>
-                        <p>Reproductions: {this.props.dataPelicula.popularity} </p>
-                        <p>Vote average: {this.props.dataPelicula.vote_average} </p>
+                        <p>Reproductions: {this.props.dataPelicula.popularity} </p>   
                     </section>
                     <a href="CAMBIAR DESPUES">Ver más</a>
                     </main>
