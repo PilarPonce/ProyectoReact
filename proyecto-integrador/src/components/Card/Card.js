@@ -1,27 +1,37 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-function Card() {
-    return (
-        <article>
-            <section className="navigation">
-                <div>
-                    <i className="fas fa-chevron-left"></i>
-                    <i className="fas fa-chevron-right"></i>
-                </div>
-                <i className="far fa-window-close"></i>
-            </section>
-            <main>
-                <img src="./img/image-default.png" alt="" />
-                    <h3>Título/ Nombre</h3>
-                    <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta perspiciatis! Sint, laboriosam cum.</p>
+class Card extends Component{
+    constructor(props){
+        super(props)
+        this.state={
+
+        }
+    }
+
+    render(){
+        return (
+            <article>
+                <section className="navigation">
+                    <div>
+                        <i className="fas fa-chevron-left"></i>
+                        <i className="fas fa-chevron-right"></i>
+                    </div>
+                    <i className="far fa-window-close"></i>
+                </section>
+                <main>
+                    <img src={this.props.dataPelicula.poster_path} alt="" />
+                    <h3>{this.props.dataPelicula.title}</h3>
+                    <p className="description">{this.props.dataPelicula.overview}</p>
                     <section className="aditional-info">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
+                        <p>Release date: {this.props.dataPelicula.release_date}</p>
+                        <p>Reproductions: {this.props.dataPelicula.popularity} </p>
+                        <p>Vote average: {this.props.dataPelicula.vote_average} </p>
                     </section>
                     <a href="CAMBIAR DESPUES">Ver más</a>
-                </main>
-            </article>
-    )
+                    </main>
+                </article>
+        )
+    }
+    
 }
 export default Card;
