@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Card from '../Card/Card';
 
 
 class Peliculas extends Component {
@@ -11,11 +12,12 @@ class Peliculas extends Component {
 
     componentDidMount() {
         
-        let url = 'https://developers.themoviedb.org/3/movies/get-popular-movies';
+        let url = 'https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117';
 
         fetch(url)
             .then(response => response.json())
             .then(data => {
+                console.log(data);
                 this.setState({
                    peliculas: data.results,
                 })
@@ -29,7 +31,7 @@ class Peliculas extends Component {
                 <button type="button">Cargar más tarjetas</button>
                 <section class="card-container">
                  
-                {this.state.peliculas.map((pelicula, idx)=> <Peliculas key={pelicula.title + idx} dataPelicula={pelicula} />)}
+                {this.state.peliculas.map((pelicula, idx)=> <Card key={pelicula.title + idx} dataPelicula={pelicula} />)}
                 </section>
             </main>
         )
