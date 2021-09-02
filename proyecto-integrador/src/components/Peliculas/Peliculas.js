@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Card from '../Card/Card';
+import './Peliculas.css'
 
 
 class Peliculas extends Component {
@@ -27,13 +28,15 @@ class Peliculas extends Component {
 
     render () {
         return (
-            <main >
+            <React.Fragment>
                 <button type="button">Cargar más tarjetas</button>
-                <section class="card-container">
-                 
-                {this.state.peliculas.map((pelicula, idx)=> <Card key={pelicula.title + idx} dataPelicula={pelicula} />)}
-                </section>
-            </main>
+                <div class="card-container">
+                    {this.state.peliculas.map((pelicula, idx)=> <Card key={pelicula.title + idx} dataPelicula={pelicula} />)}
+                </div>
+
+
+
+            </React.Fragment>
         )
     }
 }
