@@ -30,10 +30,10 @@ class Peliculas extends Component {
         return (
             <React.Fragment>
                 <button type="button">Cargar más tarjetas</button>
-                <div class="card-container">
+                <div className="card-container">
                     {this.state.peliculas.map((pelicula, idx)=> <Card key={pelicula.title + idx} dataPelicula={pelicula} />)}
                 </div>
-
+ 
 
 
             </React.Fragment>
