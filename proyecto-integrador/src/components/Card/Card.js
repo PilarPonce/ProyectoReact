@@ -11,7 +11,7 @@ class Card extends Component{
 
     render(){
         return (
-            <article className="cardPeli">
+            <article className="cardPeliculas">
                 <section className="navigation">
                     <div>
                         <i className="fas fa-chevron-left"></i>
@@ -19,7 +19,7 @@ class Card extends Component{
                     </div>
                     <i className="far fa-window-close"></i>
                 </section>
-                <main>
+                <main className= "mainPeliculas">
                     <img src={this.props.dataPelicula.backdrop_path} alt="" />
                     <h3>{this.props.dataPelicula.title}</h3>
                     <p>Vote average: {this.props.dataPelicula.vote_average} </p>
@@ -29,8 +29,8 @@ class Card extends Component{
                         <p>Reproductions: {this.props.dataPelicula.popularity} </p>   
                     </section>
                     <a href="CAMBIAR DESPUES">Ver más</a>
-                    </main>
-                </article>
+                </main>
+            </article>
         )
     }
     
