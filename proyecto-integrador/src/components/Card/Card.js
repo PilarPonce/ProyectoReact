@@ -12,6 +12,7 @@ class Card extends Component{
     render(){
         return (
             <article className="cardPeliculas">
+
                 <section className="navigation">
                     <div>
                         <i className="fas fa-chevron-left"></i>
@@ -19,6 +20,7 @@ class Card extends Component{
                     </div>
                     <i className="far fa-window-close"></i>
                 </section>
+
                 <main className= "mainPeliculas">
                     <img src={this.props.dataPelicula.backdrop_path} alt="" />
                     <h3>{this.props.dataPelicula.title}</h3>
@@ -28,7 +30,9 @@ class Card extends Component{
                         <p>Release date: {this.props.dataPelicula.release_date}</p>
                         <p>Reproductions: {this.props.dataPelicula.popularity} </p>   
                     </section>
+
                     <a href="CAMBIAR DESPUES">Ver más</a>
+                
                 </main>
             </article>
         )

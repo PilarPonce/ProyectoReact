@@ -1,0 +1,12 @@
+.titulo{
+    color:lightpink;
+    size: 30px;
+    display: grid;
+    justify-content: center;
+}
+
+.header{
+    height: 200px;
+    background-color: white;
+};
+
