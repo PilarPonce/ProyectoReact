@@ -49,6 +49,8 @@ class Card extends Component{
                         Vote average: {this.props.dataPelicula.vote_average} </p>
                         <p className='mas' onClick={ () => this.verMas()} >{this.state.texto}</p>
                     </section>
+
+                    <p className='mas' onClick= {()=> this.props.remove(this.props.dataPelicula.id)} > Borrar </p>
                 
                 </main>
             </article>

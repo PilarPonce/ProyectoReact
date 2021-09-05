@@ -8,6 +8,8 @@ class Peliculas extends Component {
         super()
         this.state = {
             peliculas: [],
+            isloaded: false,
+            nextUrl: ''
         }
     }
 
@@ -26,13 +28,22 @@ class Peliculas extends Component {
             .catch(error => console.log(error))
     }
 
+   borrar (peliculaABorrar){
+        let peliculasQueQuedan = this.state.peliculas.filter( pelicula => pelicula.id !== peliculaABorrar);
+
+        this.setState({
+            peliculas: peliculasQueQuedan
+        })
+    }
+
     render () {
         return (
             <React.Fragment>
                 <div className="card-container">
-                    {this.state.peliculas.map((pelicula, idx)=> <Card key={pelicula.title + idx} dataPelicula={pelicula} />)}
+                    {this.state.peliculas.map((pelicula, idx)=> <Card key={pelicula.title + idx} dataPelicula={pelicula} remove= {(peliculaABorrar) =>this.borrar (peliculaABorrar)} />)}
                 </div>
                 <button type="button">Cargar más tarjetas</button>
+                
             </React.Fragment>
         )
     }
