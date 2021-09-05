@@ -5,7 +5,22 @@ class Card extends Component{
     constructor(props){
         super(props)
         this.state={
+            texto:'Ver más',
+            verMas: false,
+        }
+    }
 
+    verMas(){
+        if(this.state.verMas){
+            this.setState({
+                texto:'Ver más',
+                verMas: false
+            })
+        }else{
+            this.setState({
+                texto: 'Ver menos',
+                verMas: true,
+            })
         }
     }
 
@@ -24,14 +39,16 @@ class Card extends Component{
                 <main className= "mainPeliculas"> 
                     <img src={this.props.dataPelicula.backdrop_path} alt="" />
                     <h3>{this.props.dataPelicula.title}</h3>
-                    <p>Vote average: {this.props.dataPelicula.vote_average} </p>
+                    <p className="description">{this.props.dataPelicula.overview}</p>   
+                    
                     <section className="aditional-info">
-                        <p className="description">{this.props.dataPelicula.overview}</p>
-                        <p>Release date: {this.props.dataPelicula.release_date}</p>
-                        <p>Reproductions: {this.props.dataPelicula.popularity} </p>   
+                        <p className={`extra ${this.state.verMas ? 'mostrar' : 'esconder'}`} > Reproductions: {this.props.dataPelicula.popularity} 
+                        <hr/>
+                        Release date: {this.props.dataPelicula.release_date}
+                        <hr/>
+                        Vote average: {this.props.dataPelicula.vote_average} </p>
+                        <p className='mas' onClick={ () => this.verMas()} >{this.state.texto}</p>
                     </section>
-
-                    <a href="CAMBIAR DESPUES">Ver más</a>
                 
                 </main>
             </article>
