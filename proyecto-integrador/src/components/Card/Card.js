@@ -21,7 +21,7 @@ class Card extends Component{
                     <i className="far fa-window-close"></i>
                 </section>
 
-                <main className= "mainPeliculas">
+                <main className= "mainPeliculas"> 
                     <img src={this.props.dataPelicula.backdrop_path} alt="" />
                     <h3>{this.props.dataPelicula.title}</h3>
                     <p>Vote average: {this.props.dataPelicula.vote_average} </p>

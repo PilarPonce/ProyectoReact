@@ -29,13 +29,10 @@ class Peliculas extends Component {
     render () {
         return (
             <React.Fragment>
-                <button type="button">Cargar más tarjetas</button>
                 <div className="card-container">
                     {this.state.peliculas.map((pelicula, idx)=> <Card key={pelicula.title + idx} dataPelicula={pelicula} />)}
                 </div>
- 
-
-
+                <button type="button">Cargar más tarjetas</button>
             </React.Fragment>
         )
     }
