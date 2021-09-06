@@ -1,9 +1,10 @@
 import React from 'react';
+import './Footer.css'
 
 function Footer() {
     return (
         <footer>
-            <ul class="team">
+            <ul className="integrantes">
                 <li>Pilar Ponce</li>
                 <li>Martina Tomlianovich</li>
                 <li>Luz Vedoya</li>
