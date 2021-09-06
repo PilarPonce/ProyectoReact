@@ -71,10 +71,11 @@ class Peliculas extends Component {
     render () {
         return (
             <React.Fragment>
+                <section className="filtro" >
+                    <Filtro filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)} />
+                </section>
 
                 <div className="card-container">
-
-                    <Filtro filtrarPeliculas= {(busquedaAFiltrar)=> this.filtrarPeliculas(busquedaAFiltrar)}/>
 
                     {this.state.isloaded === false ?
                         <p className="cargando">Cargando...</p> :

@@ -3,5 +3,11 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    
+}
+
+.filtro {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
 }
