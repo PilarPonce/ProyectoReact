@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import Formulario from '../Formulario/Formulario'
 
 function Header() {
     return(
@@ -10,14 +11,12 @@ function Header() {
                 <i className="fas fa-th"></i>
                 <i className="fas fa-align-justify"></i>
 
-                <form action="">
-                    <input type="text" name="search" id="" placeholder="Search"/>
-                        <button type="submit"><i className="fas fa-search"></i></button>
-                </form>
+                <Formulario />
 
         
 
             </section>
+            
         </header>
 
     )
