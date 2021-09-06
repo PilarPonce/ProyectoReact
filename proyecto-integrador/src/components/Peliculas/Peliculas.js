@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Card from '../Card/Card';
 import './Peliculas.css'
+import Filtro from '../Filtro/Filtro';
 
 
 class Peliculas extends Component {
@@ -23,7 +24,8 @@ class Peliculas extends Component {
                 console.log(data);
                 this.setState({
                     peliculas: data.results,
-                    isloaded: true,
+                    peliculasIniciales: data.results, //
+                    isloaded: true, 
                     nextUrl: data.results.next, 
                 })
             })
@@ -57,16 +59,32 @@ class Peliculas extends Component {
         })
     }
 
+    filtrarPeliculas(busquedaAFiltrar) {
+        let peliculasFiltradas = this.state.peliculasIniciales.filter
+            (pelicula => pelicula.name.toLowerCase.includes(busquedaAFiltrar.toLowerCase))
+
+        this.setState({
+            peliculas: peliculasFiltradas
+        } )
+        
+    }
+
     render () {
         return (
             <React.Fragment>
+
                 <div className="card-container">
+
+                    
+                    <Filtro filtrarPeliculas= {(busquedaAFiltrar)=> this.filtrarPeliculas(busquedaAFiltrar)}/>
+
                     {this.state.isloaded === false ?
                         <p className="cargando">Cargando...</p> :
                     
-                    this.state.peliculas.map((pelicula, idx)=>  <Card key={pelicula.title + idx} dataPelicula={pelicula} 
+                    this.state.peliculas.map((pelicula, idx)=> <Card key={pelicula.title + idx} dataPelicula={pelicula} 
                     remove= {(peliculaABorrar) =>this.borrar (peliculaABorrar) } />)}
                 </div>
+
                 <button onClick={() => this.agregar()} >Cargar más tarjetas</button>
             </React.Fragment>
         )

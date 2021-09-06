@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import Formulario from '../Formulario/Formulario'
+// import Filtro from '../Filtro/Filtro';
 
 function Header() {
     return(
@@ -11,10 +11,9 @@ function Header() {
                 <i className="fas fa-th"></i>
                 <i className="fas fa-align-justify"></i>
 
-                <Formulario />
+                {/* <Filtro filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)} /> */}
 
-        
-
+                
             </section>
             
         </header>

@@ -13,7 +13,7 @@ class Formulario extends Component {
         event.preventDefault();
     }
 
-    //la funcion controlarCAmbios obtendra el valor ingreado por el usuario en el input y actualizara el estado interno del componente 
+    //la funcion controlarCambios obtendra el valor ingreado por el usuario en el input y actualizara el estado interno del componente 
     //el atributo target identifica al campo objetivo del evento y la prop value obtiene el valor ingresado 
     controlarCambios(e) {
         this.setState ({
@@ -30,13 +30,6 @@ class Formulario extends Component {
             </form>
         )
     }
-
-
-
-
-
-
-
 
 
 
