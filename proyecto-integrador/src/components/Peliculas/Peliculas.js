@@ -22,11 +22,32 @@ class Peliculas extends Component {
             .then(data => {
                 console.log(data);
                 this.setState({
-                   peliculas: data.results,
+                    peliculas: data.results,
+                    isloaded: true,
+                    nextUrl: data.results.next, 
                 })
             })
             .catch(error => console.log(error))
     }
+
+
+    agregar() {
+        let url = this.state.nextUrl;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                this.setState({
+                    peliculas: this.state.peliculas.concat(data.results),
+                    nextUrl: data.results.next
+
+                })
+            })
+            .catch(error => console.log(error))
+    }
+
+
 
    borrar (peliculaABorrar){
         let peliculasQueQuedan = this.state.peliculas.filter( pelicula => pelicula.id !== peliculaABorrar);
@@ -40,10 +61,13 @@ class Peliculas extends Component {
         return (
             <React.Fragment>
                 <div className="card-container">
-                    {this.state.peliculas.map((pelicula, idx)=> <Card key={pelicula.title + idx} dataPelicula={pelicula} remove= {(peliculaABorrar) =>this.borrar (peliculaABorrar)} />)}
+                    {this.state.isloaded === false ?
+                        <p className="cargando">Cargando...</p> :
+                    
+                    this.state.peliculas.map((pelicula, idx)=>  <Card key={pelicula.title + idx} dataPelicula={pelicula} 
+                    remove= {(peliculaABorrar) =>this.borrar (peliculaABorrar) } />)}
                 </div>
-                <button type="button">Cargar más tarjetas</button>
-                
+                <button onClick={() => this.agregar()} >Cargar más tarjetas</button>
             </React.Fragment>
         )
     }

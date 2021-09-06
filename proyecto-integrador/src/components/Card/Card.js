@@ -37,12 +37,13 @@ class Card extends Component{
                 </section>
 
                 <main className= "mainPeliculas"> 
-                    <img src={this.props.dataPelicula.backdrop_path} alt="" />
+                    <img src={this.props.dataPelicula.poster_path} alt=""/>
                     <h3>{this.props.dataPelicula.title}</h3>
                     <p className="description">{this.props.dataPelicula.overview}</p>   
                     
                     <section className="aditional-info">
-                        <p className={`extra ${this.state.verMas ? 'mostrar' : 'esconder'}`} > Reproductions: {this.props.dataPelicula.popularity} 
+                        <p className={`extra ${this.state.verMas ? 'mostrar' : 'esconder'}`} > 
+                        Reproductions: {this.props.dataPelicula.popularity} 
                         <br/>
                         Release date: {this.props.dataPelicula.release_date}
                         <br/>
@@ -53,6 +54,10 @@ class Card extends Component{
                     <p className='mas' onClick= {()=> this.props.remove(this.props.dataPelicula.id)} > Borrar </p>
                 
                 </main>
+
+                x
+
+
             </article>
         )
     }
