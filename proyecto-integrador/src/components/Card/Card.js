@@ -43,9 +43,9 @@ class Card extends Component{
                     
                     <section className="aditional-info">
                         <p className={`extra ${this.state.verMas ? 'mostrar' : 'esconder'}`} > Reproductions: {this.props.dataPelicula.popularity} 
-                        <hr/>
+                        <br/>
                         Release date: {this.props.dataPelicula.release_date}
-                        <hr/>
+                        <br/>
                         Vote average: {this.props.dataPelicula.vote_average} </p>
                         <p className='mas' onClick={ () => this.verMas()} >{this.state.texto}</p>
                     </section>
