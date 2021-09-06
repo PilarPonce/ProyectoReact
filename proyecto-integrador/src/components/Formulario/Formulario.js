@@ -15,10 +15,12 @@ class Formulario extends Component {
 
     //la funcion controlarCambios obtendra el valor ingreado por el usuario en el input y actualizara el estado interno del componente 
     //el atributo target identifica al campo objetivo del evento y la prop value obtiene el valor ingresado 
+
     controlarCambios(e) {
-        this.setState ({
+        this.setState({
             valor: e.target.value
-        });
+        }, () => console.log(this.state.valor))
+
     }
 
     render (){

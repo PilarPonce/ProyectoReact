@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class Filtro extends Component {
     constructor() {
         super();
@@ -16,7 +15,7 @@ class Filtro extends Component {
     controlarCambios(e) {
         this.setState({
             filtrarPor: e.target.value
-        }, () => this.props.filtrarPeliculas(this.state.filterBy)
+        }, () => this.props.filtrarPeliculas(this.state.filtrarPor)
         )
     }
 

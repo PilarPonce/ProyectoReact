@@ -9,13 +9,13 @@ class Peliculas extends Component {
         super()
         this.state = {
             peliculas: [],
+            peliculasIniciales: [],
             isloaded: false,
             nextUrl: ''
         }
     }
 
-    componentDidMount() {
-        
+    componentDidMount() {    
         let url = 'https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117';
 
         fetch(url)
@@ -24,7 +24,7 @@ class Peliculas extends Component {
                 console.log(data);
                 this.setState({
                     peliculas: data.results,
-                    peliculasIniciales: data.results, //
+                    peliculasIniciales: data.results, 
                     isloaded: true, 
                     nextUrl: data.results.next, 
                 })
@@ -60,8 +60,7 @@ class Peliculas extends Component {
     }
 
     filtrarPeliculas(busquedaAFiltrar) {
-        let peliculasFiltradas = this.state.peliculasIniciales.filter
-            (pelicula => pelicula.name.toLowerCase.includes(busquedaAFiltrar.toLowerCase))
+        let peliculasFiltradas = this.state.peliculasIniciales.filter(pelicula => pelicula.title.toLowerCase().includes(busquedaAFiltrar.toLowerCase()));
 
         this.setState({
             peliculas: peliculasFiltradas
@@ -75,13 +74,12 @@ class Peliculas extends Component {
 
                 <div className="card-container">
 
-                    
                     <Filtro filtrarPeliculas= {(busquedaAFiltrar)=> this.filtrarPeliculas(busquedaAFiltrar)}/>
 
                     {this.state.isloaded === false ?
                         <p className="cargando">Cargando...</p> :
                     
-                    this.state.peliculas.map((pelicula, idx)=> <Card key={pelicula.title + idx} dataPelicula={pelicula} 
+                    this.state.peliculas.map((pelicula, idx )=> <Card key={pelicula.title + idx} dataPelicula={pelicula} 
                     remove= {(peliculaABorrar) =>this.borrar (peliculaABorrar) } />)}
                 </div>
 
