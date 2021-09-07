@@ -55,7 +55,7 @@ class Card extends Component{
                 
                 </main>
 
-                x
+                
 
 
             </article>

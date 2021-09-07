@@ -5,7 +5,7 @@ import './Header.css';
 function Header() {
     return(
         <header className="header">
-            <h1 className= "titulo">RENOVAR GARDENIA</h1>
+            <h1 className= "titulo">BOOTH MOVIES</h1>
             <section>
 
                 <i className="fas fa-th"></i>
