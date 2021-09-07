@@ -8,7 +8,14 @@ function Footer() {
                 <li>Pilar Ponce</li>
                 <li>Martina Tomlianovich</li>
                 <li>Luz Vedoya</li>
-            </ul>
+
+            </ul> 
+            <section className="infoextra">
+                <h3>Proyecto React</h3>
+                <h4>2021</h4>
+            </section>
+          
+           
         </footer>
     )
 }

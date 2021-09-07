@@ -39,7 +39,6 @@ class Peliculas extends Component {
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 this.setState({
                     peliculas: this.state.peliculas.concat(data.results),
                     nextUrl: data.results.next
