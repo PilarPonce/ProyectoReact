@@ -29,8 +29,7 @@ class Peliculas extends Component {
                     nextUrl: data.results.next, 
                 })
             })
-            .catch(error => console.log(error))
-            
+            .catch(error => console.log(error))       
     }
 
 
@@ -44,13 +43,10 @@ class Peliculas extends Component {
                 this.setState({
                     peliculas: this.state.peliculas.concat(data.results),
                     nextUrl: data.results.next
-
                 })
             })
             .catch(error => console.log(error))
     }
-
-
 
 
    borrar (peliculaABorrar){
@@ -73,10 +69,23 @@ class Peliculas extends Component {
     render () {
         return (
             <React.Fragment>
-                <section className="filtro" >
-                    <Filtro filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)} />
-                </section>
 
+            <div className="barraNav">
+             <section className="filtro" >
+                    <Filtro filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)} />
+            </section>
+
+            <section>
+                <h2>TODAS LAS PELICULAS</h2>
+                
+            </section>
+
+            <section>
+                 <h2>VISUALIZACION</h2>
+            </section>
+
+            </div> 
+               
                 <div className="card-container">
 
                     {this.state.isloaded === false ?
