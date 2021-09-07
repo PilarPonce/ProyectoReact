@@ -82,7 +82,7 @@ class Peliculas extends Component {
                     {this.state.isloaded === false ?
                         <p className="cargando">Cargando...</p> :
                     
-                    this.state.peliculas.map (((pelicula, idx ) => <Card key={pelicula.title + idx} dataPelicula={pelicula} remove= {(peliculaABorrar) =>this.borrar (peliculaABorrar)  } /> )) }
+                    this.state.peliculas.map (((pelicula, idx ) => <Card key={pelicula.title + idx} dataPelicula={pelicula} remove= {(peliculaABorrar) =>this.borrar (peliculaABorrar)  } /> ))}
 
                 </div>
 
