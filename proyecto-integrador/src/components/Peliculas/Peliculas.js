@@ -16,9 +16,8 @@ class Peliculas extends Component {
     }
 
     componentDidMount() {    
-        let url = 'https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117&language=en-US&page=1';
 
-        fetch(url)
+            fetch('https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117&language=en-US page=1')
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -26,7 +25,7 @@ class Peliculas extends Component {
                     peliculas: data.results,
                     peliculasIniciales: data.results, 
                     isloaded: true, 
-                    nextUrl: data.results.next, 
+                 
                 })
             })
             .catch(error => console.log(error))       
@@ -34,16 +33,14 @@ class Peliculas extends Component {
 
 
     agregar() {
-        let url = this.state.nextUrl;
 
-        fetch(url) 
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117&language=en-US&page=2')
         
             .then(response => response.json())
             .then(data => {
                 console.log('response data');
                 this.setState({
                     peliculas: this.state.peliculas.concat(data.results),
-                    nextUrl: data.results.next
                 })
             })
             .catch(error => console.log(error + 'error happened here'))
