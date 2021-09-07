@@ -1,7 +1,7 @@
 .cardPeliculas{
     padding: 10px;
     margin-bottom: 20px;
-    width: 24%;
+    width: 23%;
     background: #ebedf0;
     border-radius: 5px;
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
@@ -24,4 +24,9 @@
 }
 .esconder{
     display: none;
+}
+
+.imagenes{
+    height: 31rem;
+    width: 20rem;
 }
