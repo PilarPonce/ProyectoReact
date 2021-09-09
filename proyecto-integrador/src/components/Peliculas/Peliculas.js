@@ -73,14 +73,6 @@ class Peliculas extends Component {
                     <Filtro filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)} />
             </section>
 
-            <section>
-                <h2>TODAS LAS PELICULAS</h2>
-                
-            </section>
-
-            <section>
-                 <h2>VISUALIZACION</h2>
-            </section>
 
             </div> 
                

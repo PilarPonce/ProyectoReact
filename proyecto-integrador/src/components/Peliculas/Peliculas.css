@@ -15,12 +15,10 @@
 
 .barraNav{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
     color: white;
-    background-color:  #2f3e46;;
     align-items: center;
    
 }

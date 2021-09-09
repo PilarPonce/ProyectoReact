@@ -9,13 +9,20 @@
 .logo {
   height: 150px;
   width: 150px;
-  display: flex;
-  padding-left: 430px;
-
 
 }
+.menu{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: white;
+}
 
-header{
+.header{
     background-color: #2f3e46;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
 };
+
+
