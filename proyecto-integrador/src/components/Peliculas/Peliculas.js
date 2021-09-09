@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import Card from '../Card/Card';
 import './Peliculas.css'
-import Filtro from '../Filtro/Filtro';
-
+import Header from '../Header/Header';
 
 class Peliculas extends Component {
     constructor(){
@@ -10,15 +9,12 @@ class Peliculas extends Component {
         this.state = {
             peliculas: [],
             peliculasIniciales: [],
-            isloaded: false,
+            isLoaded: false,
             page: 1,
         }
     }
 
     componentDidMount() {    
-        
-
-
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117&language=en-US&page=${this.state.page}`) //verificar
             .then(response => response.json())
             .then(data => {
@@ -26,7 +22,7 @@ class Peliculas extends Component {
                 this.setState({
                     peliculas: data.results,
                     peliculasIniciales: data.results, 
-                    isloaded: true, 
+                    isLoaded: true, 
                     page: this.state.page + 1,
                 })
             })
@@ -69,25 +65,28 @@ class Peliculas extends Component {
 
     render () {
         return (
-            <React.Fragment>
-
-            <div className="barraNav">
-             <section className="filtro" >
-                    <Filtro filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)} />
-            </section>
-
-
-            </div> 
-               
+            <React.Fragment>     
                 <div className="card-container">
-
-                    {this.state.isloaded === false ?
-                        <p className="cargando">Cargando...</p> :
-                    
-                    this.state.peliculas.map (((pelicula, idx ) => <Card key={pelicula.title + idx} dataPelicula={pelicula} remove= {(peliculaABorrar) =>this.borrar (peliculaABorrar)  } /> ))}
-
+                    <Header filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)} />
+              
                 </div>
+                <section>
 
+                    {
+                    this.state.isLoaded === false ?
+                        <p className="cargando">Cargando...</p> :
+                        this.state.peliculas.map(((pelicula, idx) =>
+                            <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.borrar(peliculaABorrar)} />))
+                    
+                    }
+
+                    {
+                        this.state.peliculas.lenght === 0 ?
+                            <p>No se encontraron resultados de búsqueda</p> : ''
+                    }
+                </section>
+
+                            
                 <button onClick={() => this.agregar()} >Cargar más tarjetas</button>
             </React.Fragment>
         )
