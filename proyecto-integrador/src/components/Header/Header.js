@@ -41,15 +41,16 @@ class Header extends Component {
                         <h2 className="menu">Todas las películas</h2>
                         <h2 className="menu">Visualización</h2>
                         <h2 className="menu">Nosotros</h2>
+                        <form action="" onSubmit={(event) => this.evitarSubmit(event)}>
+                            <input className="buscador" type="text" onChange={(e) => this.controlarCambios(e)} value={this.state.filtrarPor} name="search" placeholder="Search" />
+                        </form>
                         <button className="botonOrientacion" onClick={() => this.orientacion()}>Orientacion horizontal</button> 
                         {/* BUSCAR ICONOS DE BOTONES ORIENTACION HORIZONTAL Y VERTICAL */}
                         <button className="botonOrientacion" onClick={() => this.orientacion()}>Orientacion vertical</button>
                    </div>
                    
 
-                    <form action="" onSubmit={(event) => this.evitarSubmit(event)}>
-                        <input className="buscador" type="text" onChange={(e) => this.controlarCambios(e)} value={this.state.filtrarPor} name="search" placeholder="Search" />
-                    </form>
+                   
                </header>
             </React.Fragment>
         )

@@ -67,9 +67,7 @@ class Peliculas extends Component {
         return (
             <React.Fragment>     
                 <div className="card-container">
-                    <Header filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)} />
-              
-         
+                    <Header filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)} />     
 
                     {this.state.isLoaded === false ?
                         <p className="cargando">Cargando...</p> :
