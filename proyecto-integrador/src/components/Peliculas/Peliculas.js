@@ -11,13 +11,13 @@ class Peliculas extends Component {
             peliculas: [],
             peliculasIniciales: [],
             isloaded: false,
-            page: [], //verificar
+            page: 1,
         }
     }
 
     componentDidMount() {    
 
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117&language=en-USpage=1`) //verificar 
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117&language=en-USpage=${this.state.page}`) //verificar
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -25,7 +25,7 @@ class Peliculas extends Component {
                     peliculas: data.results,
                     peliculasIniciales: data.results, 
                     isloaded: true, 
-                    // page: 1,
+                    page: this.state.page + 1,
                 })
             })
             .catch(error => console.log(error))       
