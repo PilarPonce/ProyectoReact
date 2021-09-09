@@ -37,7 +37,7 @@ class Header extends Component {
             <React.Fragment>
                <header className="header">
                    <div className="barraNav">
-                        <img className="logo" src="/images/logo.jpg" alt="" />
+                        <img className="logo" src="/images/logo4.jpeg" alt="" />
                         <h2 className="menu">Todas las películas</h2>
                         <h2 className="menu">Visualización</h2>
                         <h2 className="menu">Nosotros</h2>
