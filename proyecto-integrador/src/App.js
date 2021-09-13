@@ -4,12 +4,10 @@ import Peliculas from './components/Peliculas/Peliculas';
 
 function App() {
   return (
-    <div>
-        <main>
-          <Peliculas/>
-        </main>
+    <React.Fragment>
+      <Peliculas/>
       <Footer/>
-    </div>
+    </React.Fragment>
   
   );
 }
