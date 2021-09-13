@@ -25,7 +25,7 @@ class Header extends Component {
             <React.Fragment>
                <header className="header">
                    <div className="barraNav">
-                        <img className="logo" src="/images/logo4.jpeg" alt="" />
+                        <img className="logo" src="/images/logoFondo2.jpg" alt="" />
                         <form action="" onSubmit={(event) => this.evitarSubmit(event)}>
                             <input className="buscador" type="text" onChange={(e) => this.controlarCambios(e)} value={this.state.filtrarPor} name="search" placeholder="Buscar por titulo..." />
                         </form>

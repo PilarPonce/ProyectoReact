@@ -13,7 +13,7 @@ class Peliculas extends Component {
             isLoaded: false,
             page: 1,
             orientacion: false,
-            texto: 'Cambiar a orientación horizontal'
+            texto: 'Cambiar orientación a horizontal'
         }
     }
 
@@ -109,7 +109,7 @@ class Peliculas extends Component {
                             </div>
                             
                                 
-                            <button onClick={() =>this.agregar()}  >Cargar más tarjetas</button>
+                            <button onClick={() =>this.agregar()}  >Cargar más tarjetas </button>
                         </div>  
                          
                        
