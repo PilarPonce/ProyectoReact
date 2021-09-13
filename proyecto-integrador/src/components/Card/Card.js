@@ -10,6 +10,7 @@ class Card extends Component{
         }
     }
 
+    //funcion ver mas informacion
     verMas(){
         if(this.state.verMas){
             this.setState({

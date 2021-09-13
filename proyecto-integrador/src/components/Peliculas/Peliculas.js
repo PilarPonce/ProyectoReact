@@ -14,6 +14,7 @@ class Peliculas extends Component {
         }
     }
 
+    //fetch peliculas
     componentDidMount() {    
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117&language=en-US&page=${this.state.page}`) //verificar
             .then(response => response.json())
@@ -30,6 +31,7 @@ class Peliculas extends Component {
     }
 
 
+    //fetch cargar mas peliculas
     agregar() {
 
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117&language=en-US&page=${this.state.page}`)
@@ -46,6 +48,7 @@ class Peliculas extends Component {
     }
 
 
+    //eliminar pelicula
    borrar (peliculaABorrar){
         let peliculasQueQuedan = this.state.peliculas.filter( pelicula => pelicula.id !== peliculaABorrar);
 
@@ -54,6 +57,7 @@ class Peliculas extends Component {
         })
     }
 
+    //filtrar peliculas
     filtrarPeliculas(busquedaAFiltrar) {
         let peliculasFiltradas = this.state.peliculasIniciales.filter(pelicula => pelicula.title.toLowerCase().includes(busquedaAFiltrar.toLowerCase()));
 
