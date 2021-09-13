@@ -99,18 +99,28 @@ class Peliculas extends Component {
                             {/* BUSCAR ICONOS DE BOTONES ORIENTACION HORIZONTAL Y VERTICAL */}
                     
                 </div> 
-                <main className={`${this.state.orientacion ? 'vertical' : 'horizontal'}`}>
+                <main >
                         {this.state.isLoaded === false ?
-                            <p className="cargando">Cargando...</p> :
-                            this.state.peliculas.map(((pelicula, idx) =>
-                                <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.borrar(peliculaABorrar)} orientacion={this.state.orientacion}/>))
+                        <p className="cargando">Cargando...</p> :
+                       
+                        
+                        <div className={`${this.state.orientacion ? 'vertical' : 'horizontal'}`}>
+                            {this.state.peliculas.map(( (pelicula, idx) =>
+                                <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.borrar(peliculaABorrar)} orientacion={this.state.orientacion} />))}
+                                
+                            <button onClick={this.agregar} >Cargar más tarjetas</button>
+                        </div>  
+                         
+                       
+                            
+                            
                         }
 
                         
                 </main>
                 
                             
-                <button onClick={() => this.agregar()} >Cargar más tarjetas</button>
+                
             </React.Fragment>
         )
     }
