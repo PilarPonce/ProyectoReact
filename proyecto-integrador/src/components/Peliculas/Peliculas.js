@@ -69,20 +69,22 @@ class Peliculas extends Component {
 
     render () {
         return (
-            <React.Fragment>     
-                <div className="card-container">
-                    <Header filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)} />     
+            <React.Fragment>  
+                <Header filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)} />     
+                <main>
+                    <div className="card-container">
+                        {this.state.isLoaded === false ?
+                            <p className="cargando">Cargando...</p> :
+                            this.state.peliculas.map(((pelicula, idx) =>
+                                <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.borrar(peliculaABorrar)} />))
+                        }
 
-                    {this.state.isLoaded === false ?
-                        <p className="cargando">Cargando...</p> :
-                        this.state.peliculas.map(((pelicula, idx) =>
-                            <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.borrar(peliculaABorrar)} />))
-                    }
-
-                    {this.state.peliculas.lenght === 0 ?
-                        <p>No se encontraron resultados de búsqueda</p> : ''
-                    }
-                </div>
+                        {this.state.peliculas.lenght === 0 ?
+                            <p>No se encontraron resultados de búsqueda</p> : ''
+                        }
+                    </div>
+                </main>
+                
                             
                 <button onClick={() => this.agregar()} >Cargar más tarjetas</button>
             </React.Fragment>
