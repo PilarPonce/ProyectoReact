@@ -96,27 +96,19 @@ class Peliculas extends Component {
                 </div> 
                 <main >
                         {this.state.isLoaded === false ?
-                        <p className="cargando">Cargando...</p> : 
-                        this.state.peliculas.length === 0 ?
-                        <p>No se encontraron resultados de búsqueda</p> :
+                            <p className="cargando">Cargando...</p> : 
+                                this.state.peliculas.length === 0 ?
+                            <p>No se encontraron resultados de búsqueda</p> :
                        
                         
                         <div >
                             <div className={`${this.state.orientacion ? 'vertical' : 'horizontal'}`}>
-                            {this.state.peliculas.map(( (pelicula, idx) =>
-                                <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.borrar(peliculaABorrar)} orientacion={this.state.orientacion} />))}
+                                {this.state.peliculas.map(( (pelicula, idx) =>
+                                    <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.borrar(peliculaABorrar)} orientacion={this.state.orientacion} />))}
                             </div>
-                            
-                                
                             <button onClick={() =>this.agregar()}  >Cargar más tarjetas </button>
                         </div>  
-                         
-                       
-                            
-                            
                         }
-
-                        
                 </main>
                 
                             
