@@ -9,7 +9,6 @@ class Peliculas extends Component {
         this.state = {
             peliculas: [],
             peliculasIniciales: [],
-           
             isLoaded: false,
             page: 1,
             orientacion: false,
