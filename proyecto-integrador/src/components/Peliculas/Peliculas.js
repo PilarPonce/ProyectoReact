@@ -43,7 +43,7 @@ class Peliculas extends Component {
         } else {
             this.setState({
                 orientacion: true,
-                texto: 'Cambiar a orientación vertical'
+                texto: 'Cambiar orientación a vertical'
             })
         }
     }
@@ -92,10 +92,8 @@ class Peliculas extends Component {
             <React.Fragment>  
                 <Header filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)}  />
                 
-                <div>
+                <div className="zonaBoton">
                     <button className="botonOrientacion" onClick={() => this.orientacion()}>{this.state.texto}</button> 
-                            {/* BUSCAR ICONOS DE BOTONES ORIENTACION HORIZONTAL Y VERTICAL */}
-                    
                 </div> 
                 <main >
                         {this.state.isLoaded === false ?

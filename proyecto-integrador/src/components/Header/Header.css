@@ -28,12 +28,27 @@
 .menu{
   text-decoration: none;
   color: white;
-  font-size: 13px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.menu2{
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  margin-right: 25px;
+}
+
+.menu2:hover{
+  text-decoration: underline;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .buscador{
   width: 300px;
   margin-right: 25px;
+  height: 20px;
 }
 
 

@@ -8,6 +8,8 @@
     display: flex;
     flex-direction: column;
     width: 23%;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .cardPeliculasH{
@@ -33,7 +35,11 @@
 }
 
 
-.cardPeliculas:hover {
+.cardPeliculasH:hover {
+    box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
+}
+
+.cardPeliculasV:hover {
     box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 }
 
@@ -52,6 +58,6 @@
 }
 
 .imagenes{
-    height: 31rem;
-    width: 20rem;
+    height: 30rem;
+    width: 18.1rem;
 }
