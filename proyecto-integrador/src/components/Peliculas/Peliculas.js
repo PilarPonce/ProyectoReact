@@ -91,9 +91,7 @@ class Peliculas extends Component {
         return (
             <React.Fragment>  
                 <Header filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)}  />
-                {this.state.peliculas.length === 0 ?
-                            <p>No se encontraron resultados de búsqueda</p> : ''
-                }
+                
                 <div>
                     <button className="botonOrientacion" onClick={() => this.orientacion()}>{this.state.texto}</button> 
                             {/* BUSCAR ICONOS DE BOTONES ORIENTACION HORIZONTAL Y VERTICAL */}
@@ -101,14 +99,19 @@ class Peliculas extends Component {
                 </div> 
                 <main >
                         {this.state.isLoaded === false ?
-                        <p className="cargando">Cargando...</p> :
+                        <p className="cargando">Cargando...</p> : 
+                        this.state.peliculas.length === 0 ?
+                        <p>No se encontraron resultados de búsqueda</p> :
                        
                         
-                        <div className={`${this.state.orientacion ? 'vertical' : 'horizontal'}`}>
+                        <div >
+                            <div className={`${this.state.orientacion ? 'vertical' : 'horizontal'}`}>
                             {this.state.peliculas.map(( (pelicula, idx) =>
                                 <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.borrar(peliculaABorrar)} orientacion={this.state.orientacion} />))}
+                            </div>
+                            
                                 
-                            <button onClick={this.agregar} >Cargar más tarjetas</button>
+                            <button onClick={() =>this.agregar()}  >Cargar más tarjetas</button>
                         </div>  
                          
                        
