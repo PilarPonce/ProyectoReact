@@ -11,6 +11,8 @@ class Peliculas extends Component {
             peliculasIniciales: [],
             isLoaded: false,
             page: 1,
+            orientacion: false,
+            texto: 'Cambiar a orientación horizontal'
         }
     }
 
@@ -30,6 +32,20 @@ class Peliculas extends Component {
             .catch(error => console.log(error))       
     }
 
+    //funcion orientacion
+    orientacion (){
+        if (this.state.orientacion) {
+            this.setState({
+                orientacion: false,
+                texto: 'Cambiar orientación a horizontal'
+            })
+        } else {
+            this.setState({
+                orientacion: true,
+                texto: 'Cambiar a orientación vertical'
+            })
+        }
+    }
 
     //fetch cargar mas peliculas
     agregar() {
@@ -70,19 +86,22 @@ class Peliculas extends Component {
     render () {
         return (
             <React.Fragment>  
-                <Header filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)} />     
-                <main>
-                    <div className="card-container">
+                <Header filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)} />    
+                <div>
+                    <button className="botonOrientacion" onClick={() => this.orientacion()}>{this.state.texto}</button> 
+                            {/* BUSCAR ICONOS DE BOTONES ORIENTACION HORIZONTAL Y VERTICAL */}
+                    
+                </div> 
+                <main className={`${this.state.orientacion ? 'card-container' : 'horizontal'}`}>
                         {this.state.isLoaded === false ?
                             <p className="cargando">Cargando...</p> :
                             this.state.peliculas.map(((pelicula, idx) =>
-                                <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.borrar(peliculaABorrar)} />))
+                                <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.borrar(peliculaABorrar)} orientacion={this.state.orientacion}/>))
                         }
 
                         {this.state.peliculas.lenght === 0 ?
                             <p>No se encontraron resultados de búsqueda</p> : ''
                         }
-                    </div>
                 </main>
                 
                             

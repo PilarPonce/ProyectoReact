@@ -25,9 +25,11 @@ class Card extends Component{
         }
     }
 
+    
+
     render(){
         return (
-            <article className="cardPeliculas">
+            <article className= {`${this.props.orientacion ? 'cardPeliculasH': 'cardPeliculasV'  }`}>
 
                 <section className="navigation">
                     <div>
@@ -37,22 +39,26 @@ class Card extends Component{
                     <i className="far fa-window-close"></i>
                 </section>
 
-                <main className= "mainPeliculas">  
+                <main className= {`${this.props.orientacion ? 'horizontalPeliculas': 'verticalPeliculas'  }`}>  
                     <img className="imagenes" src= {`https://image.tmdb.org/t/p/w500${this.props.dataPelicula.poster_path}`} alt={`${this.props.dataPelicula.title}`}/>
-                    <h3>{this.props.dataPelicula.title}</h3>
-                    <p className="description">{this.props.dataPelicula.overview}</p>   
-                    
-                    <section className="aditional-info">
-                        <p className={`extra ${this.state.verMas ? 'mostrar' : 'esconder'}`} > 
-                        Reproductions: {this.props.dataPelicula.popularity} 
-                        <br/>
-                        Release date: {this.props.dataPelicula.release_date}
-                        <br/>
-                        Vote average: {this.props.dataPelicula.vote_average} </p>
-                        <p className='mas' onClick={ () => this.verMas()} >{this.state.texto}</p>
-                    </section>
+                    <div >
+                        <h3>{this.props.dataPelicula.title}</h3>
+                        <p className="description">{this.props.dataPelicula.overview}</p> 
+                        <section className="aditional-info">
+                            <p className={`extra ${this.state.verMas ? 'mostrar' : 'esconder'}`} > 
+                            Reproductions: {this.props.dataPelicula.popularity} 
+                            <br/>
+                            Release date: {this.props.dataPelicula.release_date}
+                            <br/>
+                            Vote average: {this.props.dataPelicula.vote_average} </p>
+                            <p className='mas' onClick={ () => this.verMas()} >{this.state.texto}</p>
+                        </section>
 
-                    <p className='mas' onClick= {()=> this.props.remove(this.props.dataPelicula.id)} > Borrar </p>
+                        <p className='mas' onClick= {()=> this.props.remove(this.props.dataPelicula.id)} > Borrar </p>
+                    </div>
+                      
+                    
+                   
                 
                 </main>
 

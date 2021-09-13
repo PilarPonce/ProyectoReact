@@ -1,12 +1,37 @@
-.cardPeliculas{
+.cardPeliculasV{
     padding: 10px;
     margin-bottom: 20px;
     width: 23%;
     background: #ebedf0;
     border-radius: 5px;
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
-
+    display: flex;
+    flex-direction: column;
+    width: 23%;
 }
+
+.cardPeliculasH{
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    background: #ebedf0;
+    border-radius: 5px;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+    display: flex;
+    width: 100%;
+    flex-direction: row ;
+}
+
+.verticalPeliculas{
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontalPeliculas{
+    display: flex;
+    flex-direction: row ;
+}
+
 
 .cardPeliculas:hover {
     box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
