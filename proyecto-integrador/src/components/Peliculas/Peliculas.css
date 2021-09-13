@@ -1,4 +1,4 @@
-.card-container{
+.vertical{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;

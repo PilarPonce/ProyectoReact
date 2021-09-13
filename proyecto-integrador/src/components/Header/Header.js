@@ -6,7 +6,6 @@ class Header extends Component {
         super() 
         this.state = {
             filtrarPor: '',
-           
         }
     }
     evitarSubmit(event) {
@@ -33,6 +32,7 @@ class Header extends Component {
                         <form action="" onSubmit={(event) => this.evitarSubmit(event)}>
                             <input className="buscador" type="text" onChange={(e) => this.controlarCambios(e)} value={this.state.filtrarPor} name="search" placeholder="Search" />
                         </form>
+                        
                    </div>
                    
 
