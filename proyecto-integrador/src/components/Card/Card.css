@@ -1,3 +1,4 @@
+/*CSS ORIENTACION VERTICAL*/
 .cardPeliculasV{
     padding: 10px;
     margin-bottom: 20px;
@@ -12,6 +13,21 @@
     margin-right: 2px;
 }
 
+.verticalPeliculas{
+    display: flex;
+    flex-direction: column;
+}
+
+.cardPeliculasV:hover {
+    box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
+}
+
+.imagenesV{
+    height: 30rem;
+    width: 18.1rem;
+}
+
+/*CSS ORIENTACION HORIZONTAL*/
 .cardPeliculasH{
     padding: 10px;
     margin-bottom: 20px;
@@ -24,25 +40,26 @@
     flex-direction: row ;
 }
 
-.verticalPeliculas{
-    display: flex;
-    flex-direction: column;
-}
-
 .horizontalPeliculas{
     display: flex;
     flex-direction: row ;
 }
 
-
 .cardPeliculasH:hover {
     box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 }
 
-.cardPeliculasV:hover {
-    box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
+.imagenesH{
+    height: 20rem;
+    width: 14rem;
 }
 
+.infoHorizontal{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/*CSS VER MAS Y VER MENOS*/
 .mas{
     color: blue;
 }
@@ -57,17 +74,3 @@
     display: none;
 }
 
-.imagenesV{
-    height: 30rem;
-    width: 18.1rem;
-}
-
-.imagenesH{
-    height: 20rem;
-    width: 14rem;
-}
-
-.infoHorizontal{
-    margin-left: 15px;
-    margin-right: 15px;
-}
