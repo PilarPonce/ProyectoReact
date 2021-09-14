@@ -90,17 +90,13 @@ class Peliculas extends Component {
         return (
             <React.Fragment>  
                 <Header filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)}  />
-                
-               
-                    <h4 className="botonOrientacion" onClick={() => this.orientacion()}>{this.state.texto}</h4> 
-                
+                <h4 className="botonOrientacion" onClick={() => this.orientacion()}>{this.state.texto}</h4> 
                 <main >
                         {this.state.isLoaded === false ?
                             <p className="cargando">Cargando...</p> : 
                                 this.state.peliculas.length === 0 ?
                             <p>No se encontraron resultados de búsqueda</p> :
                        
-                        
                         <div >
                             <div className={`${this.state.orientacion ? 'vertical' : 'horizontal'}`}>
                                 {this.state.peliculas.map(( (pelicula, idx) =>
@@ -110,9 +106,6 @@ class Peliculas extends Component {
                         </div>  
                         }
                 </main>
-                
-                            
-                
             </React.Fragment>
         )
     }

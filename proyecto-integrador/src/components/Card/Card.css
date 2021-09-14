@@ -15,12 +15,12 @@
 .cardPeliculasH{
     padding: 10px;
     margin-bottom: 20px;
-    width: 100%;
+    margin-left: 45px;
     background: #ebedf0;
     border-radius: 5px;
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
     display: flex;
-    width: 100%;
+    width: 90%;
     flex-direction: row ;
 }
 
@@ -57,7 +57,17 @@
     display: none;
 }
 
-.imagenes{
+.imagenesV{
     height: 30rem;
     width: 18.1rem;
+}
+
+.imagenesH{
+    height: 20rem;
+    width: 14rem;
+}
+
+.infoHorizontal{
+    margin-left: 15px;
+    margin-right: 15px;
 }

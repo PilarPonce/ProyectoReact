@@ -40,8 +40,8 @@ class Card extends Component{
                 </section>
 
                 <main className= {`${this.props.orientacion ? 'horizontalPeliculas': 'verticalPeliculas'  }`}>  
-                    <img className="imagenes" src= {`https://image.tmdb.org/t/p/w500${this.props.dataPelicula.poster_path}`} alt={`${this.props.dataPelicula.title}`}/>
-                    <div >
+                    <img className= {`${this.props.orientacion ? 'imagenesH': 'imagenesV'  }`}src= {`https://image.tmdb.org/t/p/w500${this.props.dataPelicula.poster_path}`} alt={`${this.props.dataPelicula.title}`}/>
+                    <div className="infoHorizontal">
                         <h3>{this.props.dataPelicula.title}</h3>
                         <p className="description">{this.props.dataPelicula.overview}</p> 
                         <section className="aditional-info">
