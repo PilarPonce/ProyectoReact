@@ -11,8 +11,7 @@ function Footer() {
 
             </ul> 
             <section className="infoextra">
-                <h3>Proyecto React</h3>
-                <h4>2021</h4>
+                <h3>Proyecto React      2021</h3> 
             </section>
           
            
