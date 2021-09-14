@@ -92,7 +92,7 @@ class Peliculas extends Component {
                 <Header filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)}  />
                 
                 <div className="zonaBoton">
-                    <button className="botonOrientacion" onClick={() => this.orientacion()}>{this.state.texto}</button> 
+                    <h4 className="botonOrientacion" onClick={() => this.orientacion()}>{this.state.texto}</h4> 
                 </div> 
                 <main >
                         {this.state.isLoaded === false ?

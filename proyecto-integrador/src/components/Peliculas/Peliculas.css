@@ -24,6 +24,13 @@
     margin-left: 5px;
 }
 
+.botonOrientacion:hover{
+    text-decoration: underline;
+    font-size: 12px;
+    cursor: pointer;
+
+}
+
 .zonaBoton{
     align-items: right;
     text-align: right;
