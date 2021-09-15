@@ -30,12 +30,8 @@ class Header extends Component {
                         <a className="menu2" href="https://www.instagram.com/">Nosotros</a>
                         <form action="" onSubmit={(event) => this.evitarSubmit(event)}>
                             <input className="buscador" type="text" onChange={(e) => this.controlarCambios(e)} value={this.state.filtrarPor} name="search" placeholder="Buscar por titulo..." />
-                        </form>
-                       
-                   </div>
-                   
-
-                   
+                        </form>        
+                   </div>       
                </header>
             </React.Fragment>
         )

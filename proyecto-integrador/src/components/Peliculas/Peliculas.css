@@ -22,8 +22,9 @@
 .botonOrientacion{
     margin-top: 10px;
     margin-bottom: 0px;
-    margin-left: 5px;
-   
+    color:  #2f3e46;
+    margin-left: -950px;
+
 }
 
 .botonOrientacion:hover{
