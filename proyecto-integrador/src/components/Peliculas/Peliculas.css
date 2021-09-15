@@ -36,8 +36,9 @@
 .botonMasTarjetas{
     margin-top: 10px;
     margin-bottom: 0px;
-    margin-left: 5px;
+    margin-left: -1020px;
     align-items: center;
+    color:  #2f3e46;
     text-align: center;
 }
 
