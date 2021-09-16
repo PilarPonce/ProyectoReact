@@ -31,10 +31,12 @@
     margin-bottom: 0px;
     color:  #2f3e46;  
     font-weight: normal;
+
 }
 
 .botonOrientacion:hover{
     cursor: pointer;
+    text-decoration: underline;
 }
 
 .botonMasTarjetas{
@@ -43,16 +45,11 @@
     align-items: center;
     color:  #2f3e46;
     text-align: center;
-    font-weight: normal;
     font-size: 18px;
 }
 
 .botonMasTarjetas:hover{
     cursor: pointer;
+    text-decoration: underline;
 }
 
-.cargarmas{
-    display: flex;
-    align-items: left;
-    margin-left: 13px;
-}
