@@ -19,35 +19,40 @@
     size: 10rem;
 }
 
+
+.botonorientacion{
+    display: flex;
+    align-items: left;
+    margin-left: 13px;
+}
+
 .botonOrientacion{
     margin-top: 10px;
     margin-bottom: 0px;
     color:  #2f3e46;  
-    font-weight: lighter;
-    text-decoration: underline;
-    /*margin-left: -980px;*/
-
+    font-weight: normal;
 }
 
 .botonOrientacion:hover{
-    text-decoration: underline;
-    font-size: 18px;
     cursor: pointer;
-    /*margin-left: -950px;*/
 }
 
 .botonMasTarjetas{
     margin-top: 10px;
     margin-bottom: 0px;
-    /*margin-left: -1090px;*/
     align-items: center;
     color:  #2f3e46;
     text-align: center;
+    font-weight: normal;
+    font-size: 18px;
 }
 
 .botonMasTarjetas:hover{
-    text-decoration: underline;
-    font-size: 18px;
     cursor: pointer;
-    /*margin-left: -1075px;*/
+}
+
+.cargarmas{
+    display: flex;
+    align-items: left;
+    margin-left: 13px;
 }

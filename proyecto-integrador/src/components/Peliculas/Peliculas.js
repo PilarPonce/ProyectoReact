@@ -85,7 +85,10 @@ class Peliculas extends Component {
         return (
             <React.Fragment>  
                 <Header filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)}  />
-                <h4 className="botonOrientacion" onClick={() => this.orientacion()}>{this.state.texto}</h4> 
+                <div className="botonorientacion">
+                    <h4 className="botonOrientacion" onClick={() => this.orientacion()}>{this.state.texto}</h4>
+                </div>
+              
                 <main >
                         {this.state.isLoaded === false ?
                             <p className="cargando">Cargando...</p> : 
@@ -97,7 +100,10 @@ class Peliculas extends Component {
                                 {this.state.peliculas.map(( (pelicula, idx) =>
                                     <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.borrar(peliculaABorrar)} orientacion={this.state.orientacion} />))}
                             </div>
-                            <h4 className="botonMasTarjetas" onClick={() =>this.agregar()}  >Cargar más tarjetas  </h4>
+                            <div className="cargarmas">
+                                <h4 className="botonMasTarjetas" onClick={() => this.agregar()}  >Cargar más tarjetas  </h4>
+                            </div>
+
                         </div>  
                         }
                 </main>
