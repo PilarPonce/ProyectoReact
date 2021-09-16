@@ -21,7 +21,6 @@ class Peliculas extends Component {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117&language=en-US&page=${this.state.page}`) //verificar
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 this.setState({
                     peliculas: data.results,
                     peliculasIniciales: data.results, 
@@ -54,7 +53,6 @@ class Peliculas extends Component {
         
             .then(response => response.json())
             .then(data => {
-                console.log('response data');
                 this.setState({
                     peliculas: this.state.peliculas.concat(data.results),
                     page: this.state.page + 1,
@@ -80,10 +78,7 @@ class Peliculas extends Component {
         this.setState({
             peliculas: peliculasFiltradas,
            
-        } )
-
-        
-        
+        })   
     }
 
     render () {

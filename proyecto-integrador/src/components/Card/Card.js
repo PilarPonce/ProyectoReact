@@ -56,18 +56,9 @@ class Card extends Component{
 
                         <p className='mas' onClick= {()=> this.props.remove(this.props.dataPelicula.id)} > Borrar </p>
                     </div>
-                      
-                    
-                   
-                
                 </main>
-
-                
-
-
             </article>
         )
     }
-    
 }
 export default Card;
