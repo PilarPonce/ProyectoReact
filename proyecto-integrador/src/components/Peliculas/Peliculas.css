@@ -23,7 +23,7 @@
     margin-top: 10px;
     margin-bottom: 0px;
     color:  #2f3e46;
-    margin-left: -950px;
+    margin-left: -980px;
 
 }
 
@@ -31,12 +31,13 @@
     text-decoration: underline;
     font-size: 18px;
     cursor: pointer;
+    margin-left: -950px;
 }
 
 .botonMasTarjetas{
     margin-top: 10px;
     margin-bottom: 0px;
-    margin-left: -1020px;
+    margin-left: -1090px;
     align-items: center;
     color:  #2f3e46;
     text-align: center;
@@ -46,4 +47,5 @@
     text-decoration: underline;
     font-size: 18px;
     cursor: pointer;
+    margin-left: -1075px;
 }

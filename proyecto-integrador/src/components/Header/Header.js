@@ -25,7 +25,7 @@ class Header extends Component {
             <React.Fragment>
                <header className="header">
                    <div className="barraNav">
-                        <img className="logo" src="/images/logoFondo2.jpg" alt="" />
+                        <img className="logo" src="/images/logoBO.png" alt="" />
                         <a className="menu" href="http://localhost:3000/">Todas las películas</a>
                         <a className="menu2" href="https://www.instagram.com/">Nosotros</a>
                         <form action="" onSubmit={(event) => this.evitarSubmit(event)}>
