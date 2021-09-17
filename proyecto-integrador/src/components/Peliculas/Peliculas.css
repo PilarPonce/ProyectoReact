@@ -1,3 +1,12 @@
+.popularMovies{
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 25px;
+    color:  #2f3e46;  
+}
+
 .vertical{
     display: flex;
     flex-wrap: wrap;
@@ -52,4 +61,6 @@
     cursor: pointer;
     text-decoration: underline;
 }
+
+
 

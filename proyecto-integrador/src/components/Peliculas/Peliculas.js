@@ -89,7 +89,8 @@ class Peliculas extends Component {
                     <h4 className="botonOrientacion" onClick={() => this.orientacion()}>{this.state.texto}</h4>
                 </div>
               
-                <main >
+                <main>
+                    <h1 className="popularMovies">POPULAR MOVIES</h1>
                         {this.state.isLoaded === false ?
                             <p className="cargando">Cargando...</p> : 
                                 this.state.peliculas.length === 0 ?
