@@ -12,7 +12,8 @@ class Peliculas extends Component {
             isLoaded: false,
             page: 1,
             orientacion: false,
-            texto: 'Cambiar orientación a horizontal'
+            texto: 'Cambiar orientación a horizontal',
+            ordenTarjetas: false,
         }
     }
 
@@ -45,6 +46,19 @@ class Peliculas extends Component {
             })
         }
     }
+
+    // ordenTarjetas(){
+    //     let ordenPeliculas = this.state.peliculas;
+    //     if (this.state.ordenPeliculas) {
+    //         let orden =[]
+    //         let ordenAscendente = ordenPeliculas.map((pelicula)=>pelicula.title)
+    //         ordenAscendente.sort()
+    //     } else {
+    //         let orden = []
+    //         let ordenDescendente = ordenPeliculas.map((pelicula) => pelicula.title)
+    //         ordenDescendente.reverse()
+    //     }
+    // }
 
     //fetch cargar mas peliculas
     agregar() {
