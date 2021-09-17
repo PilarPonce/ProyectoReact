@@ -46,6 +46,7 @@
 .botonOrientacion:hover{
     cursor: pointer;
     text-decoration: underline;
+    font-size: 17px;
 }
 
 .botonMasTarjetas{
@@ -60,6 +61,7 @@
 .botonMasTarjetas:hover{
     cursor: pointer;
     text-decoration: underline;
+    font-size: 20px;
 }
 
 

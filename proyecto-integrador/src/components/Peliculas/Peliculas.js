@@ -19,7 +19,7 @@ class Peliculas extends Component {
 
     //fetch peliculas
     componentDidMount() {    
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117&language=en-US&page=${this.state.page}`) //verificar
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117&language=es-ES&page=${this.state.page}`) //verificar
             .then(response => response.json())
             .then(data => {
                 this.setState({
@@ -63,7 +63,7 @@ class Peliculas extends Component {
     //fetch cargar mas peliculas
     agregar() {
 
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117&language=en-US&page=${this.state.page}`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=18581b65b3e6ad002984aa4952878117&language=es-ES&page=${this.state.page}`)
         
             .then(response => response.json())
             .then(data => {
@@ -99,12 +99,13 @@ class Peliculas extends Component {
         return (
             <React.Fragment>  
                 <Header filtrarPeliculas={(busquedaAFiltrar) => this.filtrarPeliculas(busquedaAFiltrar)}  />
+                <h1 className="popularMovies">PELÍCULAS POPULARES</h1>
                 <div className="botonorientacion">
                     <h4 className="botonOrientacion" onClick={() => this.orientacion()}>{this.state.texto}</h4>
                 </div>
               
                 <main>
-                    <h1 className="popularMovies">POPULAR MOVIES</h1>
+                    
                         {this.state.isLoaded === false ?
                             <p className="cargando">Cargando...</p> : 
                                 this.state.peliculas.length === 0 ?
@@ -116,7 +117,7 @@ class Peliculas extends Component {
                                     <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.borrar(peliculaABorrar)} orientacion={this.state.orientacion} />))}
                             </div>
                             <div className="cargarmas">
-                                <h4 className="botonMasTarjetas" onClick={() => this.agregar()}  >Cargar más tarjetas  </h4>
+                                <h4 className="botonMasTarjetas" onClick={() => this.agregar()}  >Cargar más películas  </h4>
                             </div>
 
                         </div>  
