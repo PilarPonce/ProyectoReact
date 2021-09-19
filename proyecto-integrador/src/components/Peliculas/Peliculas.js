@@ -13,7 +13,6 @@ class Peliculas extends Component {
             page: 1,
             orientacion: false,
             texto: 'Cambiar orientación a horizontal',
-            ordenTarjetas: false,
         }
     }
 
@@ -47,20 +46,6 @@ class Peliculas extends Component {
         }
     }
 
-     //ordenTarjetas(){
-         //let ordenPeliculas = this.state.peliculas;
-         //   if (this.state.ordenPeliculas) {
-        //  let orden =[]
-           //  let ordenAscendente = peliculas.map((pelicula)=>pelicula.title)
-           //  ordenAscendente.sort()
-
-         //} else {
-         //    let orden = []
-          //   let ordenDescendente = peliculas.map((pelicula) => pelicula.title)
-          //   ordenDescendente.reverse()
-         //}
-    // }
-
     //fetch cargar mas peliculas
     agregar() {
 
@@ -80,7 +65,6 @@ class Peliculas extends Component {
     //eliminar pelicula
    borrar (peliculaABorrar){
         let peliculasQueQuedan = this.state.peliculas.filter( pelicula => pelicula.id !== peliculaABorrar);
-
         this.setState({
             peliculas: peliculasQueQuedan
         })
@@ -89,7 +73,6 @@ class Peliculas extends Component {
     //filtrar peliculas
     filtrarPeliculas(busquedaAFiltrar) {
         let peliculasFiltradas =  this.state.peliculasIniciales.filter(pelicula => pelicula.title.toLowerCase().includes(busquedaAFiltrar.toLowerCase())) 
-
         this.setState({
             peliculas: peliculasFiltradas,
            
@@ -106,12 +89,10 @@ class Peliculas extends Component {
                 </div>
               
                 <main>
-                    
                         {this.state.isLoaded === false ?
                             <p className="cargando">Cargando...</p> : 
                                 this.state.peliculas.length === 0 ?
                             <p>No se encontraron resultados de búsqueda</p> :
-                       
                         <div >
                             <div className={`${this.state.orientacion ? 'vertical' : 'horizontal'}`}>
                                 {this.state.peliculas.map(( (pelicula, idx) =>
@@ -120,7 +101,6 @@ class Peliculas extends Component {
                             <div className="cargarmas">
                                 <h4 className="botonMasTarjetas" onClick={() => this.agregar()}  >Cargar más películas  </h4>
                             </div>
-
                         </div>  
                         }
                 </main>
