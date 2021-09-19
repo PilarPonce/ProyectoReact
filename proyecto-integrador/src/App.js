@@ -8,7 +8,6 @@ function App() {
       <Peliculas/>
       <Footer/>
     </React.Fragment>
-  
   );
 }
 
