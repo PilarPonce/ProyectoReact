@@ -70,12 +70,11 @@ class Peliculas extends Component {
         })
     }
 
-    //filtrar peliculas
+    //buscador
     filtrarPeliculas(busquedaAFiltrar) {
         let peliculasFiltradas =  this.state.peliculasIniciales.filter(pelicula => pelicula.title.toLowerCase().includes(busquedaAFiltrar.toLowerCase())) 
         this.setState({
             peliculas: peliculasFiltradas,
-           
         })   
     }
 

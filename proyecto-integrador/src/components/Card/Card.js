@@ -30,15 +30,6 @@ class Card extends Component{
     render(){
         return (
             <article className= {`${this.props.orientacion ? 'cardPeliculasH': 'cardPeliculasV'  }`}>
-
-                <section className="navigation">
-                    <div>
-                        <i className="fas fa-chevron-left"></i>
-                        <i className="fas fa-chevron-right"></i>
-                    </div>
-                    <i className="far fa-window-close"></i>
-                </section>
-
                 <main className= {`${this.props.orientacion ? 'horizontalPeliculas': 'verticalPeliculas'  }`}>  
                     <img className= {`${this.props.orientacion ? 'imagenesH': 'imagenesV'  }`}src= {`https://image.tmdb.org/t/p/w500${this.props.dataPelicula.poster_path}`} alt={`${this.props.dataPelicula.title}`}/>
                     <div className="infoHorizontal">
@@ -54,7 +45,7 @@ class Card extends Component{
                             <p className='mas' onClick={ () => this.verMas()} >{this.state.texto}</p>
                         </section>
 
-                        <p className='mas' onClick= {()=> this.props.remove(this.props.dataPelicula.id)} > Borrar </p>
+                        <p className='mas' onClick= {()=> this.props.remove(this.props.dataPelicula.id)} > Eliminar </p>
                     </div>
                 </main>
             </article>

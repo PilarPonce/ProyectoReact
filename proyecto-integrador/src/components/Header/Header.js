@@ -8,6 +8,8 @@ class Header extends Component {
             filtrarPor: '',
         }
     }
+
+    //buscador
     evitarSubmit(event) {
         event.preventDefault();
     }
